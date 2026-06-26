@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BookMVC.Domain.Entities.Book>
+
+@{
+    ViewData["Title"] = "Книги";
+}
+
+<h1>Книги</h1>
+
+<p>
+    <a asp-action="Create">Додати книгу</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>На складі</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Price</td>
+                <td>@item.StockQuantity</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Деталі</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

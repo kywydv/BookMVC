@@ -1,0 +1,40 @@
+﻿@model BookMVC.Domain.Entities.Book
+
+@{
+    ViewData["Title"] = "Додати книгу";
+}
+
+<h1>Додати книгу</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AuthorId"></label>
+        <input asp-for="AuthorId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="GenreId"></label>
+        <input asp-for="GenreId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PublisherId"></label>
+        <input asp-for="PublisherId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="StockQuantity"></label>
+        <input asp-for="StockQuantity" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Зберегти</button>
+</form>
+<a asp-action="Index">Назад до списку</a>

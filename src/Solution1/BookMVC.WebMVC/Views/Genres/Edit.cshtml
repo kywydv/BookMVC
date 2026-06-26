@@ -1,0 +1,17 @@
+﻿@model BookMVC.Domain.Entities.Genre
+
+@{
+    ViewData["Title"] = "Редагувати жанр";
+}
+
+<h1>Редагувати жанр</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Зберегти</button>
+</form>
+<a asp-action="Index">Назад до списку</a>

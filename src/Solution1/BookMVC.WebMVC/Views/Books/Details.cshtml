@@ -1,0 +1,22 @@
+﻿@model BookMVC.Domain.Entities.Book
+
+@{
+    ViewData["Title"] = "Деталі книги";
+}
+
+<h1>Деталі книги</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Назва</dt>
+        <dd class="col-sm-10">@Model.Title</dd>
+        <dt class="col-sm-2">Ціна</dt>
+        <dd class="col-sm-10">@Model.Price</dd>
+        <dt class="col-sm-2">На складі</dt>
+        <dd class="col-sm-10">@Model.StockQuantity</dd>
+        <dt class="col-sm-2">Опис</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+    </dl>
+</div>
+<a asp-action="Edit" asp-route-id="@Model.Id">Редагувати</a> |
+<a asp-action="Index">Назад до списку</a>
